@@ -1,8 +1,8 @@
-import play.PlayImport.PlayKeys.playRunHooks
+import play.sbt.PlayImport.PlayKeys.playRunHooks
 
-name := """play-react-webpack"""
+name := """bookie"""
 
-version := "1.0-SNAPSHOT"
+version := "0.1-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 

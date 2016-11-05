@@ -1,5 +1,3 @@
-'use strict';
-
 var webpack = require('webpack'),
     jsPath  = 'app/assets/javascripts',
     path = require('path'),
@@ -11,6 +9,7 @@ var config = {
         app: path.join(srcPath, 'app.jsx')
         //, common: ['react-dom', 'react']
     },
+    devtool: 'source-map',
     resolve: {
         alias: {},
         root: srcPath,
@@ -23,20 +22,24 @@ var config = {
         filename: '[name].js',
         pathInfo: true
     },
-
     module: {
         noParse: [],
         loaders: [
+            {test: /\.js?$/, loaders: ['babel-loader'], exclude: /node_modules/ },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loaders: ['babel-loader']
             },
             {
                 test: /\.scss$/,
-                include: /\/app\/assets/,
-                loader: 'style!css!sass'
-            }
+                loaders: ["style", "css", "sass"]
+            },
+            {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
+            {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff&name=./assets/javascripts/build/[hash].[ext]"},
+            {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff&name=./assets/javascripts/build/[hash].[ext]"},
+            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/octet-stream&name=./assets/javascripts/build/[hash].[ext]"},
+            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"}
         ]
     },
     plugins: [

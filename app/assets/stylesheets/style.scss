@@ -1,7 +1,10 @@
 html {
-  $primary-color: skyblue;
+  $primary-color: #CFD8DC;
+  font-family: 'Roboto', sans-serif;
+
 
   body {
     background-color: $primary-color;
+    margin: 0px;
   }
 }

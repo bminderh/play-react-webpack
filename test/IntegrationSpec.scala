@@ -20,6 +20,7 @@ class IntegrationSpec extends Specification {
       override val webDriver = {
         val capabilities = new DesiredCapabilities()
         capabilities.setJavascriptEnabled(true)
+        capabilities.setCapability("phantomjs.binary.path", "D:\\programs\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe")
         new PhantomJSDriver(capabilities)
       }
 
