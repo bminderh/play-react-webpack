@@ -36,9 +36,9 @@ var config = {
                 loaders: ["style", "css", "sass"]
             },
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
-            {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff&name=./assets/javascripts/build/[hash].[ext]"},
-            {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff&name=./assets/javascripts/build/[hash].[ext]"},
-            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/octet-stream&name=./assets/javascripts/build/[hash].[ext]"},
+            {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?mimetype=application/font-woff&name=./assets/javascripts/build/[hash].[ext]"},
+            {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?mimetype=application/font-woff&name=./assets/javascripts/build/[hash].[ext]"},
+            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?mimetype=application/octet-stream&name=./assets/javascripts/build/[hash].[ext]"},
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"}
         ]
     },

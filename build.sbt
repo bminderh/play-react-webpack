@@ -4,7 +4,11 @@ name := """bookie"""
 
 version := "0.1-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
+  // Disable NPM node modules
+  JsEngineKeys.npmNodeModules in Assets := Nil,
+  JsEngineKeys.npmNodeModules in TestAssets := Nil
+)
 
 scalaVersion := "2.11.6"
 
