@@ -1,7 +1,7 @@
 lazy val webpack = TaskKey[Unit]("Run webpack when packaging the application")
 
 def runWebpack(file: File) = {
-  Process("cmd /c webpack", file) !
+  Process("sh -c webpack", file) !
 }
 
 webpack := {
