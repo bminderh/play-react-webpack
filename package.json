@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nouhoum/play-react-webpack.git"
+    "url": "git+https://github.com/bminderh/play-react-webpack.git"
   },
   "keywords": [
     "play",
@@ -21,9 +21,9 @@
     "webpack"
   ],
   "bugs": {
-    "url": "https://github.com/nouhoum/play-react-webpack/issues"
+    "url": "https://github.com/bminderh/play-react-webpack/issues"
   },
-  "homepage": "https://github.com/nouhoum/play-react-webpack#readme",
+  "homepage": "https://github.com/bminderhwe/play-react-webpack#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "material-ui": "^0.16.1",
