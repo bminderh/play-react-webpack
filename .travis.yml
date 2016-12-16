@@ -8,4 +8,4 @@ node_js:
 before_install:
   - npm -g install npm@next
   - npm install
-  - ln -S /usr/bin/phantomjs /usr/local/phantomjs/bin/phantomjs
+
