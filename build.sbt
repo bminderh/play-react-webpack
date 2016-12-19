@@ -1,6 +1,6 @@
 import play.sbt.PlayImport.PlayKeys.playRunHooks
 
-name := """bookie"""
+name := """circle"""
 
 version := "0.1-SNAPSHOT"
 

@@ -11,16 +11,13 @@ import org.mongodb.scala.model.Updates._
 import org.mongodb.scala.model._
 
 import helpers.Helpers._
+import helpers.Global
+import com.google.inject._
 
-class Application extends Controller {
+class Application @Inject()(global: Global) extends Controller {
   def index = Action {
-    val mongoClient: MongoClient = MongoClient()
-
-    // get handle to "mydb" database
-    val database: MongoDatabase = mongoClient.getDatabase("mydb")
-
     // get a handle to the "test" collection
-    val collection: MongoCollection[Document] = database.getCollection("test")
+    val collection: MongoCollection[Document] = global.database.getCollection("test")
 
     collection.drop()
 
@@ -104,7 +101,7 @@ class Application extends Controller {
     collection.drop().results()
 
     // release resources
-    mongoClient.close()
+
 
     Ok(views.html.index("Your new application is ready."))
   }

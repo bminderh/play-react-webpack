@@ -1,7 +1,7 @@
 {
-  "name": "bookie",
+  "name": "circle",
   "version": "0.1.0",
-  "description": "bookie",
+  "description": "circle",
   "main": "index.js",
   "author": "Ben Minderhoud",
   "license": "ISC",
@@ -18,7 +18,11 @@
   "keywords": [
     "play",
     "reactjs",
-    "webpack"
+    "webpack",
+    "materialui",
+    "mongodb",
+    "ethereum",
+    "solidity"
   ],
   "bugs": {
     "url": "https://github.com/bminderh/play-react-webpack/issues"
