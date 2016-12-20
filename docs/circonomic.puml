@@ -1,0 +1,67 @@
+@startuml
+actor Everybody as E
+actor "Material Provider" as MP
+actor "Designer" as D
+actor Customer as C
+participant "Circonomic" as Circ
+participant Ethereum as Eth
+
+==General==
+E -> Circ: View designers
+E -> Circ: View designs
+E -> Circ: View material needs
+==Onboarding Designer==
+
+==Initiate Product Sales==
+D -> Circ: Upload design
+D -> Circ: Upload material list
+    note right: With proposed payback \nin tokens and term \n'on delivery' / 'on sale'
+C -> Circ: Browse for designs.
+C -> D: Discuss design
+C -> Circ: Initiate buy
+activate Circ
+Circ -> Eth: Put money in Product contract
+    note right: between buyer and designer and agreed delivery date.\n Block money to be returned if not delivered.
+Eth -> Circ: Confirms transaction
+Circ -> D: Inform
+deactivate Circ
+D -> Circ: Agrees contract
+activate Circ
+Circ -> Eth: Signs contract
+note right: Contract now locked.
+Eth --> Eth: Link to available Material contracts.
+Circ -> C: Confirm buy
+deactivate Circ
+==Handle material==
+Circ -> MP: Materials needed
+MP -> Circ: Confirm availability
+Activate Circ
+Circ -> Eth: Initiate Material contract
+Circ -> D: Materials available
+Deactivate Circ
+D <-> C: Agree delivery
+D -> Circ: Confirm materials delivered.
+activate Circ
+Circ -> Eth: Lock Material contract
+    note right: for payout(on sale/on delivery)
+Eth --> Circ: Payout
+Eth --> Eth: Link to Product contract.
+Circ --> MP: Confirm Delivery
+deactivate Circ
+====
+D -> D: Build Product
+D -> C: Deliver Product
+C -> Circ: Agrees Product Received
+activate Circ
+Circ -> Eth: Release Product contact
+Eth -> Eth: Release payment Material contract
+Eth -> Eth: Release x% Provision for corporation
+note right: for Ethereum contracts and website.
+Eth -> Eth: Put x% in Recycle Deposit contract.
+Eth -> Circ: Confirm transactions
+Circ -> D: Payment
+Circ -> MP: Payment
+Circ -> C: Receipt
+deactivate Circ
+
+@enduml
