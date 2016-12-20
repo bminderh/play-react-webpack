@@ -1,0 +1,18 @@
+language: scala
+jdk:
+  - oraclejdk8
+scala:
+  - 2.11.8
+node_js:
+  - "6.9.2"
+before_install:
+  - npm -g install npm@next
+  - npm install
+notifications:
+    email:
+        recipients:
+            - ben.minderhoud@gmail.com
+        on_success: change
+        on_failure: always
+services:
+- mongodbgi
