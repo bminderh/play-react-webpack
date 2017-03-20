@@ -1,6 +1,6 @@
 Circlenomic
 ===================================
-[![Build Status](https://travis-ci.org/bminderh/play-react-webpack.png?branch=master)](https://travis-ci.org/bminderh/play-react-webpackacti)
+[![Build Status](https://travis-ci.org/bminderh/play-react-webpack.png?branch=master)]](https://travis-ci.org/bminderh/play-react-webpackacti)
 
 Install nodejs nodejs-legacy npm
 sudo npm install

@@ -18,7 +18,8 @@ libraryDependencies ++= Seq(
   ws,
   specs2 % Test,
   "com.codeborne" % "phantomjsdriver" % "1.2.1",
-  "org.mongodb.scala" %% "mongo-scala-driver" % "1.2.1"
+  "org.mongodb.scala" %% "mongo-scala-driver" % "1.2.1",
+  "org.rogach" %% "scallop" % "2.0.5"
 )
 
 playRunHooks <+= baseDirectory.map(Webpack.apply)
