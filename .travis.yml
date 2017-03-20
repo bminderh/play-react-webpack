@@ -4,10 +4,12 @@ jdk:
 scala:
   - 2.11.8
 node_js:
-  - "6.9.2"
+  - "6.10.0-"
 before_install:
   - npm -g install npm@next
   - npm install
+  - npm version
+  - nvm install 6.10
 notifications:
     email:
         recipients:
