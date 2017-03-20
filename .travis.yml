@@ -12,6 +12,9 @@ before_install:
   - npm rebuild node-sass
   - npm --version
   - node --version
+before_script:
+  - sleep 15
+  - mongo test --eval 'db.addUser("travis", "test");'
 
 notifications:
     email:
