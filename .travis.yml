@@ -8,8 +8,10 @@ node_js:
 before_install:
   - npm -g install npm@next
   - npm install
-  - npm version
   - nvm install 6.10
+  - npm --version
+  - node --version
+
 notifications:
     email:
         recipients:
