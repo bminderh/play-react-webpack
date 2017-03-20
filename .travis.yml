@@ -9,6 +9,7 @@ before_install:
   - npm -g install npm@next
   - npm install
   - nvm install 6.10
+  - npm rebuild node-sass
   - npm --version
   - node --version
 
