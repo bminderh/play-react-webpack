@@ -22,7 +22,7 @@ libraryDependencies ++= Seq(
   "org.rogach" %% "scallop" % "2.0.5"
 )
 
-playRunHooks <+= baseDirectory.map(Webpack.apply)
+playRunHooks += baseDirectory.map(Webpack.apply).value
 
 routesGenerator := InjectedRoutesGenerator
 
