@@ -20,7 +20,11 @@ class IntegrationSpec extends Specification {
       override val webDriver = {
         val capabilities = new DesiredCapabilities()
         capabilities.setJavascriptEnabled(true)
-        capabilities.setCapability("phantomjs.binary.path", "/usr/local/phantomjs/bin/phantomjs")
+        capabilities.setCapability("phantomjs.binary.path", sys.env("PHANTOMJS_BIN"))
+        /*
+         * TRAVIS -> "/usr/local/phantomjs/bin/phantomjs"
+         * LOCAL -> "/usr/bin/phantomjs"
+         */
         //capabilities.setCapability("phantomjs.binary.path", "/usr/bin/phantomjs")
         new PhantomJSDriver(capabilities)
       }
