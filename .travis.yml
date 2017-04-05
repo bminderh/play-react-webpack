@@ -18,9 +18,10 @@ before_script:
   - export PHANTOMJS_BIN=/usr/local/phantomjs/bin/phantomjs
 
 after_script:
-  - ls /home/travis/build/bminderh/play-react-webpack/*
-  - ls /home/travis/build/bminderh/play-react-webpack/app/assets/*
-  - ls /home/travis/build/bminderh/play-react-webpack/app/assets/javascripts/*
+  - sudo ls /home/travis/build/bminderh/play-react-webpack/*
+  - sudo ls /home/travis/build/bminderh/play-react-webpack/app/assets/*
+  - sudo ls /home/travis/build/bminderh/play-react-webpack/app/assets/javascripts/*
+  - sudo ls /home/travis/build/bminderh/play-react-webpack/app/assets/javascripts/build/*
 
 
 
