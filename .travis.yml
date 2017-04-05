@@ -30,7 +30,7 @@ before_install:
 before_script:
   - sleep 15
   - mongo test --eval 'db.addUser("travis", "test");'
-  - export PHANTOMJS_BIN=/usr/local/phantomjs/bin/phantomjs
+  - export PHANTOMJS_BIN=$PWD/travis_phantomjs
 
 after_script:
   - sudo ls /home/travis/build/bminderh/play-react-webpack/*
