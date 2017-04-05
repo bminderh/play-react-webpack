@@ -1,10 +1,18 @@
 language: scala
+
 jdk:
   - oraclejdk8
+
 scala:
   - 2.11.8
+
 node_js:
   - "6.10.0-"
+
+cache:
+  directories:
+    - travis_phantomjs
+
 before_install:
   - npm -g install npm@next
   - npm install
@@ -12,6 +20,13 @@ before_install:
   - npm rebuild node-sass
   - npm --version
   - node --version
+  - "export PHANTOMJS_VERSION=2.1.1"
+  - "export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH"
+  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
+  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then wget https://github.com/Medium/phantomjs/releases/download/v$PHANTOMJS_VERSION/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2; fi"
+  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
+  - "phantomjs --version"
+
 before_script:
   - sleep 15
   - mongo test --eval 'db.addUser("travis", "test");'
