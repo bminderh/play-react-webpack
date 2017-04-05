@@ -53,3 +53,5 @@ var config = {
 };
 
 module.exports = config;
+
+console.log(config.output.path);

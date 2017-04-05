@@ -19,8 +19,8 @@ before_script:
 
 after_script:
   - ls /home/travis/build/bminderh/play-react-webpack/*
-  - ls /home/travis/build/bminderh/play-react-webpack/assets/*
-  - ls /home/travis/build/bminderh/play-react-webpack/assets/javascripts/*
+  - ls /home/travis/build/bminderh/play-react-webpack/app/assets/*
+  - ls /home/travis/build/bminderh/play-react-webpack/app/assets/javascripts/*
 
 
 
