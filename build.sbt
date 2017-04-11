@@ -19,7 +19,12 @@ libraryDependencies ++= Seq(
   specs2 % Test,
   "com.codeborne" % "phantomjsdriver" % "1.2.1",
   "org.mongodb.scala" %% "mongo-scala-driver" % "1.2.1",
-  "org.rogach" %% "scallop" % "2.0.5"
+  "org.rogach" %% "scallop" % "2.0.5",
+  "com.mohiva" %% "play-silhouette" % "4.0.0",
+  "com.mohiva" %% "play-silhouette-password-bcrypt" % "4.0.0",
+  "com.mohiva" %% "play-silhouette-crypto-jca" % "4.0.0",
+  "com.mohiva" %% "play-silhouette-persistence" % "4.0.0",
+  "com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test"
 )
 
 playRunHooks += baseDirectory.map(Webpack.apply).value
@@ -43,5 +48,7 @@ resolvers += "Sonatype releases" at "https://oss.sonatype.org/content/repositori
 
 resolvers += "TypeSafe snapshots" at "http://repo.typesafe.com/typesafe/snapshots"
 resolvers += "TypeSafe releases" at "http://repo.typesafe.com/typesafe/releases"
+
+resolvers += Resolver.jcenterRepo
 
 fork in run := true

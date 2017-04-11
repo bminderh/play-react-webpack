@@ -7,6 +7,7 @@ import MenuItem from 'material-ui/MenuItem';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import { Link, IndexLink } from 'react-router';
 
 class Menubar extends React.Component {
 
@@ -33,6 +34,8 @@ class Menubar extends React.Component {
             <MenuItem value={7} primaryText="Active Text" />
           </DropDownMenu>
         </ToolbarGroup>
+        <Link to="/login">Log in</Link>
+        <Link to="/signup">Sign up</Link>
         <ToolbarGroup>
           <ToolbarTitle text="Options" />
           <FontIcon className="fa fa-thermometer-full" />
