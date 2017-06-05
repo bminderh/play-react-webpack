@@ -14,7 +14,7 @@ cache:
     - travis_phantomjs
 
 before_install:
-  - npm -g install npm@next
+  - npm -g install npm@latest
   - npm install
   - nvm install 6.10
   - npm rebuild node-sass
