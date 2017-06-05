@@ -4,10 +4,10 @@ jdk:
   - oraclejdk8
 
 scala:
-  - 2.11.8
+  - 2.12.2
 
 node_js:
-  - "6.10.0-"
+  - "7"
 
 cache:
   directories:

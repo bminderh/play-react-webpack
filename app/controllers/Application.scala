@@ -102,7 +102,6 @@ class Application @Inject()(global: Global) extends Controller {
 
     // release resources
 
-
     Ok(views.html.index("Your new application is ready."))
   }
 }
