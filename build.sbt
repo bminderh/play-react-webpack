@@ -10,7 +10,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
   JsEngineKeys.npmNodeModules in TestAssets := Nil
 )
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.11.8"
 
 playRunHooks += baseDirectory.map(Webpack.apply).value
 
